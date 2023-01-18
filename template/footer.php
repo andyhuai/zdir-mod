@@ -3,7 +3,7 @@
 		<div class = "layui-container">
 			<div class = "layui-row">
 				<div class = "layui-col-lg12">
-				Copyright © 2017-2023 Powered Zdir | Host by Huai
+				Copyright © 2017-2023 Powered Zdir
 			</div>
 		</div>
 	</div>
