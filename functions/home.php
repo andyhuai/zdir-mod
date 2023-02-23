@@ -1,4 +1,5 @@
 <?php
+	include_once('MkEncrypt.php');
 	@$admin = $_GET['admin'];
 	/**
 	获取需要读取的目录
@@ -23,6 +24,8 @@
 	$dir = strip_tags($dir);
 	$dir = str_replace("\\","/",$dir);
 	$rel_path = $thedir."/".$dir;
+	$pwd = ".password";
+	$show_pwd = false;
 	
 	//获取markdown文件地址
 	//判断是否是首页
@@ -66,6 +69,9 @@
 	$newfile = array();
 	foreach( $listdir as $value )
 	{
+		if($pwd == $value){
+			$show_pwd = true;
+		}
 		//如果参数为空
 		if(!isset($dir)){
 			$tmp_path = $thedir;
@@ -82,6 +88,19 @@
 		else{
 			array_push($newfile,$value);
 		}
+	}
+	
+	
+	if ($show_pwd == true) {
+		$pwd_path = $thedir.'/'.$dir.'/'.$showdir.'/'.$pwd;
+		if (is_file($pwd_path)){
+			$c = file_get_contents($pwd_path);
+			if ($c != '') {
+				MkEncrypt($c);	
+			}
+		}
+		
+		$show_pwd = false;
 	}
 	//两个数组顺序合并
 	$listdir = array_merge($newdir,$newfile);
