@@ -2,7 +2,7 @@
 	#默认读取同级目录
 	$thedir = str_replace(['/zdir','\zdir'],'',__DIR__);
 	$siteinfo = array(
-		"site_name"	=>	"<i class='fa fa-sitemap' aria-hidden='true'></i> ZDIR",
+		"site_name"	=>	"<i class='fa fa-sitemap' aria-hidden='true'></i> Huai_Station",
 		"title"		=>	"私有云盘",
 		"keywords"	=>	"zdir,h5ai,Directory Lister,Fdscript,目录列表,目录索引",
 		"description"	=>	"Zdir是一款使用PHP开发的目录列表程序，简单实用，免费开源。"
@@ -25,7 +25,8 @@
 		"indexes.php",
 		"zdir",
 		"@eaDir",
-		"#recycle"
+		"#recycle",
+		".password"
 	);
 	//设置参数
 	$config = array(
